@@ -252,7 +252,7 @@ UI_RATE_SELECT.title = TEXT_RATE;
 UI_RATE_SELECT.dataset.tooltipText = TEXT_RATE;
 UI_RATE_SELECT.classList.add("yt-uix-tooltip");
 
-["0.25", "0.5", "1", "1.5", "2", "3"].forEach(function (r) {
+["0.25", "0.5", "1", "1.25", "1.5", "2", "3"].forEach(function (r) {
     var o = document.createElement("option");
     o.value = r;
     o.textContent = "x" + r;

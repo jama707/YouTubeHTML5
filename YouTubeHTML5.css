@@ -132,7 +132,7 @@ body.crxhtml5 #watch-appbar-playlist {
 body.crxhtml5 #watch-appbar-playlist .playlist-videos-list {
     max-height: 260px;
 }
-
+/*
 body.crxhtml5 .player-height {
     height: 360px;
 }
@@ -155,7 +155,7 @@ body.crxhtml5 .watch-large .player-height {
 
 body.crxhtml5 .watch-large .player-width {
     width: 1280px;
-}
+}*/
 
 /* YouTube feather */
 

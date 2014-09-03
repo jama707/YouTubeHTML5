@@ -10,6 +10,8 @@ var YOUTUBE_AJAX          = false,
     YOUTUBE_CONTAINER     = null,
     YOUTUBE_WATCH         = null,
     STATE_VIDEO_TIME      = 0,
+    YOUTUBE_PLAYER_WIDTH  = 640,
+    YOUTUBE_PLAYER_HEIGHT = 480,
     STATE_VIDEO_RATE      = 1,
     STATE_VIDEO_RETRY     = false,
     HTML5_PLAYER          = document.createElement("div"),
@@ -284,6 +286,8 @@ UI_TOGGLE_CHECKBOX.addEventListener("change", function () {
         if (YOUTUBE_AJAX) {
             location.reload(true);
         }
+        HTML5_PLAYER.style.width = YOUTUBE_PLAYER_WIDTH + "px";
+        HTML5_PLAYER.style.height = YOUTUBE_PLAYER_HEIGHT + "px";
         YOUTUBE_CONTAINER.replaceChild(YOUTUBE_PLAYER, HTML5_PLAYER);
         document.body.classList.remove("crxhtml5");
         this.checked = false;
@@ -440,10 +444,13 @@ function init(streamMap) {
     try {
 
         // YouTube elements
-        YOUTUBE_PLAYER = document.getElementById("movie_player").parentNode;
+        var mPlayer=document.getElementById("movie_player");
+        YOUTUBE_PLAYER = mPlayer.parentNode;
         YOUTUBE_CONTAINER = YOUTUBE_PLAYER.parentNode;
         YOUTUBE_WATCH = YOUTUBE_CONTAINER.parentNode;
-
+        YOUTUBE_PLAYER_WIDTH = mPlayer.clientWidth;
+        YOUTUBE_PLAYER_HEIGHT = mPlayer.clientHeight;
+         
         if (!YOUTUBE_WATCH) {
             throw new Error("No YouTube video player");
         }
